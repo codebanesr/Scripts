@@ -3,7 +3,7 @@
 # I paired this up with aws system checks, In case of failed system check I applied the restart policy. So your system never goes
 # out for more than 2 minutes even in case of seve crashes. 
 
-# /etc/systemd/system/docker-compose-app.service
+# /etc/systemd/system/marsplay.service
 
 [Unit]
 Description=Docker Compose Application Service
@@ -21,3 +21,10 @@ StartLimitBurst=3
 
 [Install]
 WantedBy=multi-user.target
+
+
+# After doing this generate a soft link
+# instead of creating a soft link manuall, save this file (marsplay.service), and instruct systemd to create a soft link
+# call sudo systemctl enable marsplay.service
+# Enable basically creates a configuration file in the conf.d directory where all startup files are stored. So when the system reboots you
+# can be sure that this file will be run by systemd
