@@ -1,4 +1,4 @@
-# whatever name you want to ssh it from your local machine
+# whatever name you want to ssh it from your local machine, can be anything call it foo
 Host prod.backend.marsplay
 
 # use the ip address of the remote server, using dns in this case
