@@ -31,6 +31,7 @@ Please make sure to update tests as appropriate.
 
 #### The nginx folder contains the advanced logging for nginx, which I used primarily to log the output of `x-real-ip` and `x-forwarded-for` to track the ip addresses of the incoming request
 
+## The ssh config directory
 ` ssh-config directory in this project contains a guide to include your aws-ec2 pem files in your ssh-configs, so that you don't have to manually enter entire configuration to log in to your remote system.  At the end of this you will be able to ssh using a single line of code, which can be optimised to your taste. The ssh-config file contains comments to make the installation simpler.  `
 
 - Host is an alias you give to your connection
@@ -52,6 +53,12 @@ Please make sure to update tests as appropriate.
 
 * ``` ssh test.elastic.marsplay ``` 
 you will be connected to your remote system
+
+
+> You may also like the vscode extension that allows you to access your instances via the connections you just mentioned in your ssh-config file. I'll leave it up to you to figure out 😉
+![Image of vscode](/ssh-configs/Screenshot&#32;2019-11-04&#32;at&#32;2.27.03&#32;AM.png)
+
+>![Image of vscode](/ssh-configs/Screenshot&#32;2019-11-04&#32;at&#32;2.27.19&#32;AM.png)
 
 
 
