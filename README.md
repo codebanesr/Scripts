@@ -17,10 +17,15 @@ contains a docker compose file that helps with deployment of the elk stack. ` ðŸ
 ```
 
 ## Usage
-* Navigate to the folder containing the compose file. The run the following command
+>Navigate to the folder containing the compose file. Then run the following command
 
 ```
 docker-compose up -d --build
+``` 
+> In case you only want to run a single image, lets say you wanted to rebuild portainer
+> 
+```
+docker-compose up -d --build --no-deps portainer
 ```
 ##### This will build the entire stack, navigate to localhost:9000, this is where portainer is running, and you can verify that the stack is built up correctly
 
@@ -61,6 +66,15 @@ you will be connected to your remote system
 >![Image of vscode](/ssh-configs/Screenshot&#32;2019-11-04&#32;at&#32;2.27.19&#32;AM.png)
 
 
+
+## The systemd directory
+The systemd directory contains a systemd configuration file that restarts the docker-compose stack on a system reboot automatically
+
+` Dont forget to enable the docker daemon on your system first `
+```
+sudo systemctl enable docker
+```
+> This will create a symlink for the docker daemon into the bin directory, so that docker starts on system reboot
 
 
 ## Contributing
