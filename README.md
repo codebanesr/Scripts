@@ -12,7 +12,7 @@ contains a docker compose file that helps with deployment of the elk stack. ` ğŸ
 - "9200:9200" -> kibana
 - "5044:5044" -> logstash
 
-- 9000:9000 . -> Portainer
+- 9000:9000  -> Portainer
 - 8000:8000
 ```
 
