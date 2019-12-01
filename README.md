@@ -31,7 +31,12 @@ Please make sure to update tests as appropriate.
 
 #### The nginx folder contains the advanced logging for nginx, which I used primarily to log the output of `x-real-ip` and `x-forwarded-for` to track the ip addresses of the incoming request
 
-### ssh-config folder contains a guide to include your aws-ec2 pem files in your ssh-configs so that you don't have to manually enter entire configuration to log in to your remote system. The ssh-config file is self explanatory.
+` ssh-config directory in this project contains a guide to include your aws-ec2 pem files in your ssh-configs, so that you don't have to manually enter entire configuration to log in to your remote system.  At the end of this you will be able to ssh using a single line of code, which can be optimised to your taste. The ssh-config file contains comments to make the installation simpler.  `
+
+- Host is an alias you give to your connection
+- Hostname can be an ip or domain name for your ec2-instance
+- Identity is the location of .pem file
+- User is the default user for remote instance [mine is amazon linux, the default user for linux ami is ec2-user, yours may be called root]
 
 ### Usage Example
 ```
@@ -45,7 +50,8 @@ Please make sure to update tests as appropriate.
 ```
 `Be sure to include the correct path for your .pem file, mine happened to be a folder named EC2_SSH_KEYS inside the .ssh directory . Run the following command `
 
-* ``` ssh test.elastic.marsplay ```
+* ``` ssh test.elastic.marsplay ``` 
+you will be connected to your remote system
 
 
 
