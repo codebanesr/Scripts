@@ -1,4 +1,4 @@
-# Linux AMI Configuration
+# Tips and solution for redundant devops tasks
 
 Contains solutions to some of the problems I encountered while deploying apps to *Amazon machine instances*
 
