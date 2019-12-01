@@ -5,6 +5,8 @@ Contains solutions to some of the problems I encountered while deploying apps to
 ## The Docker Folder
 contains a docker compose file that helps with deployment of the elk stack. ` 🔴Does not have xpack security 🔴`. Use it for quickly setting up the elk stack on your system. It also has an image for portainer for you to easily manage your volumes and images for the elk stack. 
 
+##### This will expose the following ports on you machine
+
 ```
 - "5601:5601" -> elastic
 - "9200:9200" -> kibana
