@@ -52,3 +52,4 @@ done
 
 
 # https://www.golinuxcloud.com/how-to-pass-multiple-parameters-in-shell-script-in-linux/
+# https://www.learningcrux.com/course/linux-bash-shell-scripting-complete-guide-incl-awk-sed
