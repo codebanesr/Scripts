@@ -7,9 +7,10 @@ function deploy_nginx_cluster() {
     done
 }
 
+# Do not run containers in interactive mode
 function parallelize(){
         docker run -d --restart=always --name=centos${idx} -p 808${idx}:80 centos/systemd:latest 
-        docker exec centos${idx} /bin/bash -c "yum -y update; yum -y install epel-release; yum -y install nginx; cd /usr/sbin; ./nginx"
+        docker exec -t centos${idx} /bin/bash -c "yum -y update; yum -y install epel-release; yum -y install nginx; cd /usr/sbin; ./nginx"
 }
 
 deploy_nginx_cluster
