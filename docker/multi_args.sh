@@ -8,39 +8,40 @@ function show_usage (){
     printf "Usage: $0 [options [parameters]]\n"
     printf "\n"
     printf "Options:\n"
-    printf " -n|--number, Print number\n"
-    printf " -s|--single [rpm_name], Print rpm version\n"
-    printf " -m|--mdstat, Print /proc/mdstst (Update)\n"
-    printf " -c|--collect, Collect rpm list to log file\n"
-    printf " -t|--timeout, Collect timeout\n"
-    printf " -p|--path, Provide the path\n"
-    printf " -h|--help, Print help\n"
-
-return 0
+    printf " -u|--up, starts the container in detached mode\n"
+    printf " -d|--drop drops the container\n"
+    printf " -b|--build\n builds the container"
+    return 0
 }
 
 if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]];then
     show_usage
 else
-    echo "Incorrect input provided"
-    show_usage
+    echo "Processing request"
+    # show_usage
 fi
 
-
+set -a
+source .env
 # or use a switch case instead
 while [ ! -z "$1" ]; do
   case "$1" in
-     --number|-n)
+     --up|-u)
          shift
-         echo "You entered number as: $1"
+         echo "starting docker stack: $1"
+         docker-compose up -d
+         echo "following logs for socket"
+         docker logs -f socketapp
          ;;
-     --collect|-c)
+     --down|-d)
          shift
-         echo "You entered collect as: $1"
+         echo "dropping docker stack: $1"
+         docker-compose down
          ;;
-     --timeout|-t)
+     --build|-b)
         shift
-        echo "You entered timeout as: $1"
+        docker-compose build
+        echo "building docker stack: $1"
          ;;
      *)
         show_usage
